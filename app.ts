@@ -2,12 +2,16 @@
 // age = 30;
 // console.log(age);
 
+
 import express, { Request, Response } from "express";
+import jwt from 'jsonwebtoken';
 const bodyParser = require('body-parser')
 
 const app = express();
 const router = require('./routes/index.ts');
 const controller = require('./controller/controller')
+
+
 
 // type Data = {
 //     name: string;

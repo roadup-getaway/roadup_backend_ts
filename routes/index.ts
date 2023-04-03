@@ -1,15 +1,19 @@
-import express, { Request, Response, NextFunction } from "express";
+import express, {Request, Response, NextFunction, request, response} from "express";
 import * as controller from "./../controller/controller";
-const router = require('express').Router();
 
-// router.get("/", controller.index)
+const router = require('express').Router();
+import {verifyJwt} from './../controller/token';
+
+router.post("/login", controller.login)
 
 router.get("/roads", controller.getRoads)
 
-router.get("/road", controller.getRoadId)
+router.get("/road", verifyJwt, controller.getRoadId)
 
-router.post("/road", controller.postRoad)
+router.post("/road", verifyJwt, controller.postRoad)
 
-router.delete("/road", controller.deleteRoad)
+router.delete("/road", verifyJwt, controller.deleteRoad)
+
+
 
 module.exports = router;
