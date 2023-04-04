@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import { signJwt, verifyJwt } from './token';
 
 const getRoads = (req: Request, res: Response) => {
+    console.log("보자보자어디보자6")
     res.json(JSON.parse(modelGetRoads()))
 }
 

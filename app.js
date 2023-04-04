@@ -42,11 +42,7 @@ const controller = require('./controller/controller');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/', router);
-app.use(function (req, res, next) {
-    console.log("123123");
-    console.log(`jwt : ${req.headers.authorization}`);
-});
-app.listen(8080, () => {
+app.listen(3000, () => {
     console.log("**----------------------------------**");
     console.log("====      Server is On1...!!!      ====");
     console.log("**----------------------------------**");
