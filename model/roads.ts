@@ -3,6 +3,7 @@ import * as oracledb from 'oracledb'
 
 
 const fs = require('fs');
+oracledb.initOracleClient({libDir: "~/oracle2/instantclient_12_2"})
 
 const modelGetRoads = () => {
     console.log("보자보자어디보자10")
