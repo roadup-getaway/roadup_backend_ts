@@ -1,8 +1,23 @@
 "use strict";
 exports.__esModule = true;
 exports.modelDeleteRoad = exports.modelPostRoad = exports.modelGetRoadId = exports.modelGetRoads = void 0;
+var oracledb = require("oracledb");
 var fs = require('fs');
 var modelGetRoads = function () {
+    console.log("보자보자어디보자10");
+    oracledb.getConnection({
+        user: "system",
+        password: "oracle",
+        connectString: "43.201.164.113/XE"
+    }, function (error, connection) {
+        console.log("보자보자어디보자2");
+        if (error) {
+            console.log("접속 실패", error);
+        }
+        var conn = connection;
+        console.log(conn);
+    });
+    console.log("보자보자어디보자3");
     return fs.readFileSync('./model/roads.json');
 };
 exports.modelGetRoads = modelGetRoads;
